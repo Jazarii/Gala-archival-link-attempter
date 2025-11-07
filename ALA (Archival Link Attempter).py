@@ -120,7 +120,7 @@ def punctuation_stripper (link_list):
 A function which tries all of the collected links in a list.
 '''
 def try_links (link_list):
-    number_of_errors = []
+    number_of_errors = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     error_types = ["301", "307", "308", "400", "401", "402", "403", "404", "408", "Other http", "URL", "connection terminated", "timeout", "weird"]
     link_list = punctuation_stripper (link_list)
     number_of_successes = 0
@@ -183,12 +183,12 @@ def try_links (link_list):
         except Exception:
             print("unusual error, could be an improperly formatted link")
             number_of_errors[13] += 1
-        print("Successes:", number_of_successes)
-        print("Links tried:", number_of_links)
-
-        for error in number_of_errors:
-            print("number of" + error_types[error]})
-        'get this to print the number of each error using number_of_errors and error_types'
+    
+    print("Links tried:", number_of_links)
+    print("Successes:", number_of_successes)
+    for err in number_of_errors:
+        print("number of", error_types[err], ":", number_of_errors[err])
+    'get this to print the number of each error using number_of_errors and error_types'
 
     return 0
 
