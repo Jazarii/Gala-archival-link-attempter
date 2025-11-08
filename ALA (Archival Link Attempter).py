@@ -186,8 +186,9 @@ def try_links (link_list):
     
     print("Links tried:", number_of_links)
     print("Successes:", number_of_successes)
-    for err in number_of_errors:
+    while err < len(number_of_errors):
         print("number of", error_types[err], ":", number_of_errors[err])
+        err += 1
     'get this to print the number of each error using number_of_errors and error_types'
 
     return 0
